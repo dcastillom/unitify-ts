@@ -1,6 +1,6 @@
-# Unitify
+# Unitify TS
 
-Unitify is a library for converting and manipulating units of measurement.
+Unitify TS is a TypeScript library for converting and manipulating units of measurement.
 It simplifies working with different unit systems, allowing for precise and quick conversions.
 
 ## Features
@@ -14,7 +14,7 @@ It simplifies working with different unit systems, allowing for precise and quic
 To install Unitify, use npm:
 
 ```bash
-npm install unitify
+npm install unitify-ts
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm install unitify
 Here is a basic example of how to use Unitify:
 
 ```javascript
-const unitify = require('unitify')
+const unitify = require('unitify-ts')
 
 // Convert 5 celsius to fahrenheit
 const fahrenheit = unitify.convert(5, 'celsius', 'fahrenheit', 'temperature')

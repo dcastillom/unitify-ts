@@ -1,10 +1,23 @@
 {
+  "name": "unitify-ts",
   "version": "1.0.0",
   "description": "A TypeScript library for converting between various units of measurement, including length, weight, volume, temperature, speed, area, energy, pressure, power, data, angle, luminance and computation time.",
   "author": "Daniel Castillo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcastillom/unitify.git"
+    "url": "https://github.com/dcastillom/unitify-ts.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint \"*/**/*.{js,ts,jsx,tsx}\" --fix",
+    "prepare": "husky install",
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
@@ -20,12 +33,5 @@
     "mocha": "^10.7.3",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5"
-  },
-  "scripts": {
-    "test": "mocha",
-    "lint": "eslint \"*/**/*.{js,ts,jsx,tsx}\" --fix",
-    "prepare": "husky install",
-    "build": "tsc",
-    "start": "ts-node src/index.ts"
   }
 }
