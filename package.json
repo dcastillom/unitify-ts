@@ -1,7 +1,10 @@
 {
+  "version": "1.0.0",
+  "description": "A TypeScript library for converting between various units of measurement, including length, weight, volume, temperature, speed, area, energy, pressure, power, data, angle, luminance and computation time.",
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+    "@types/mocha": "^10.0.9",
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -9,11 +12,12 @@
     "eslint-config-typescript": "^1.0.0",
     "husky": "^8.0.0",
     "lint-staged": "15.2.10",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "mocha": "^10.7.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "lint": "eslint \"*/**/*.{js,ts,jsx,tsx}\" --fix",
     "prepare": "husky install",
     "build": "tsc",
