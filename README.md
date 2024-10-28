@@ -1,5 +1,3 @@
-# unitify
-
 # Unitify
 
 Unitify is a library for converting and manipulating units of measurement. It simplifies working with different unit systems, allowing for precise and quick conversions.
