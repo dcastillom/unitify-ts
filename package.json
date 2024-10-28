@@ -1,6 +1,11 @@
 {
   "version": "1.0.0",
   "description": "A TypeScript library for converting between various units of measurement, including length, weight, volume, temperature, speed, area, energy, pressure, power, data, angle, luminance and computation time.",
+  "author": "Daniel Castillo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcastillom/unitify.git"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
