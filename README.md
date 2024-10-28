@@ -1,6 +1,7 @@
 # Unitify
 
-Unitify is a library for converting and manipulating units of measurement. It simplifies working with different unit systems, allowing for precise and quick conversions.
+Unitify is a library for converting and manipulating units of measurement.
+It simplifies working with different unit systems, allowing for precise and quick conversions.
 
 ## Features
 
@@ -25,7 +26,7 @@ const unitify = require('unitify')
 
 // Convert 5 celsius to fahrenheit
 const fahrenheit = unitify.convert(5, 'celsius', 'fahrenheit', 'temperature')
-console.log(`5 celsius is ${feet} fahrenheit`)
+console.log(`5 celsius is ${fahrenheit} fahrenheit`)
 ```
 
 ## Contributing
