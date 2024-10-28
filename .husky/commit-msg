@@ -1,0 +1,13 @@
+# Call the commitlint command
+npx --no-install commitlint --edit "$1"
+
+# Extract the current branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Appends the Jira ticket to the commit message if found
+if [ -z "$(echo "$BRANCH_NAME" | grep -oE '[A-Z]+-[0-9]+')" ]; then
+  echo "No Jira Ticket found in the branch name."
+else
+  JIRA_TICKET=$(echo "$BRANCH_NAME" | grep -oE '[A-Z]+-[0-9]+')
+  echo "$(cat "$1") [$JIRA_TICKET]" > "$1"
+fi

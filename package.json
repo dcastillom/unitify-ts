@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "test": "",
+    "lint": "eslint \"*/**/*.{js,ts,jsx,tsx}\" --fix",
+    "prepare": "husky install"
+  }
+}
