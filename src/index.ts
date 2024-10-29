@@ -1,16 +1,60 @@
-import { Category, Unit } from './index.d';
 import { conversionFactors } from './utils/conversionFactors';
-
-export const UnitifyJS = (function () {
+export const UnitifyTS = (function () {
   function convert(
     value: number,
-    fromUnit: Unit,
-    toUnit: Unit,
-    category: Category
-  ) {
+    fromUnit:
+      | keyof typeof conversionFactors.length
+      | keyof typeof conversionFactors.weight
+      | keyof typeof conversionFactors.volume
+      | keyof typeof conversionFactors.temperature
+      | keyof typeof conversionFactors.speed
+      | keyof typeof conversionFactors.area
+      | keyof typeof conversionFactors.time
+      | keyof typeof conversionFactors.energy
+      | keyof typeof conversionFactors.pressure
+      | keyof typeof conversionFactors.power
+      | keyof typeof conversionFactors.data
+      | keyof typeof conversionFactors.angle
+      | keyof typeof conversionFactors.luminance
+      | keyof typeof conversionFactors.computationTime,
+    toUnit:
+      | keyof typeof conversionFactors.length
+      | keyof typeof conversionFactors.weight
+      | keyof typeof conversionFactors.volume
+      | keyof typeof conversionFactors.temperature
+      | keyof typeof conversionFactors.speed
+      | keyof typeof conversionFactors.area
+      | keyof typeof conversionFactors.time
+      | keyof typeof conversionFactors.energy
+      | keyof typeof conversionFactors.pressure
+      | keyof typeof conversionFactors.power
+      | keyof typeof conversionFactors.data
+      | keyof typeof conversionFactors.angle
+      | keyof typeof conversionFactors.luminance
+      | keyof typeof conversionFactors.computationTime,
+    category:
+      | 'length'
+      | 'weight'
+      | 'volume'
+      | 'temperature'
+      | 'speed'
+      | 'area'
+      | 'time'
+      | 'energy'
+      | 'pressure'
+      | 'power'
+      | 'data'
+      | 'angle'
+      | 'luminance'
+      | 'computationTime'
+  ): number | undefined {
     try {
       if (category === 'temperature') {
-        return convertTemperature(value, fromUnit, toUnit);
+        return convertTemperature(
+          value,
+          fromUnit as keyof typeof conversionFactors.temperature,
+          toUnit as keyof typeof conversionFactors.temperature
+        );
       }
       // @ts-ignore
       const factorFrom = conversionFactors[category][fromUnit];
@@ -22,7 +66,11 @@ export const UnitifyJS = (function () {
     }
   }
 
-  function convertTemperature(value: number, fromUnit: Unit, toUnit: Unit) {
+  function convertTemperature(
+    value: number,
+    fromUnit: keyof typeof conversionFactors.temperature,
+    toUnit: keyof typeof conversionFactors.temperature
+  ): number | undefined {
     const toCelsius = {
       celsius: (v: number) => v,
       fahrenheit: (v: number) => ((v - 32) * 5) / 9,
@@ -45,32 +93,13 @@ export const UnitifyJS = (function () {
       romer: (v: number) => (v * 21) / 40 + 7.5,
     };
 
-    // Convert to Celsius first, then to the target unit
     // @ts-ignore
     const celsiusValue = toCelsius[fromUnit](value);
     // @ts-ignore
     return fromCelsius[toUnit](celsiusValue);
   }
 
-  // function convertTemperature(value: number, fromUnit: Unit, toUnit: Unit) {
-  //   if (fromUnit === 'celsius') {
-  //     return toUnit === 'fahrenheit' ? (value * 9) / 5 + 32 : value + 273.15
-  //   } else if (fromUnit === 'fahrenheit') {
-  //     return toUnit === 'celsius'
-  //       ? ((value - 32) * 5) / 9
-  //       : ((value - 32) * 5) / 9 + 273.15
-  //   } else if (fromUnit === 'kelvin') {
-  //     return toUnit === 'celsius'
-  //       ? value - 273.15
-  //       : ((value - 273.15) * 9) / 5 + 32
-  //   }
-  // }
-
   return {
     convert,
   };
 })();
-
-// Ejemplo de uso:
-// console.log(UnitifyJS.convert(1000, 'meters', 'miles', 'length')) // 0.621371
-console.log(UnitifyJS.convert(100, 'grams', 'pounds', 'weight')); // 0.220462

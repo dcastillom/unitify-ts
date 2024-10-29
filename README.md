@@ -22,10 +22,10 @@ npm install unitify-ts
 Here is a basic example of how to use Unitify:
 
 ```javascript
-const unitify = require('unitify-ts')
+import { UnitifyTS } from 'unitify-ts'
 
 // Convert 5 celsius to fahrenheit
-const fahrenheit = unitify.convert(5, 'celsius', 'fahrenheit', 'temperature')
+const fahrenheit = UnitifyTS.convert(5, 'celsius', 'fahrenheit', 'temperature')
 console.log(`5 celsius is ${fahrenheit} fahrenheit`)
 ```
 
