@@ -7,6 +7,25 @@
     "type": "git",
     "url": "https://github.com/dcastillom/unitify-ts.git"
   },
+  "keywords": [
+    "measurement",
+    "scientific",
+    "scientific-notation",
+    "sciences",
+    "length",
+    "weight",
+    "volume",
+    "temperature",
+    "speed",
+    "area",
+    "energy",
+    "pressure",
+    "power",
+    "data",
+    "angle",
+    "luminance",
+    "computation-time"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
