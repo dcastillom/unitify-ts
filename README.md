@@ -38,7 +38,7 @@ npm install unitify-ts
 
 ## Usage
 
-Here is a basic example of how to use Unitify:
+Here is a basic example of how to use Unitify TS:
 
 ```javascript
 import { UnitifyTS } from 'unitify-ts'
